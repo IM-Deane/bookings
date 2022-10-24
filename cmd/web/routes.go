@@ -24,7 +24,7 @@ func routes(app *config.AppConfig) http.Handler {
 
 	// init static file server
 	fileServer := http.FileServer(http.Dir("./static/"))
-	router.Handle("/static/*", http.StripPrefix("/static/",fileServer))
+	router.Handle("/static/*", http.StripPrefix("/static/", fileServer))
 
 	return router
 }
