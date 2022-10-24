@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
 	"log"
 	"net/http"
@@ -10,6 +11,7 @@ import (
 
 	"github.com/IM-Deane/bookings/internal/config"
 	"github.com/IM-Deane/bookings/internal/handlers"
+	"github.com/IM-Deane/bookings/internal/models"
 	"github.com/IM-Deane/bookings/internal/render"
 )
 
@@ -20,6 +22,9 @@ var session *scs.SessionManager
 
 //  main is the app entry point
 func main() {
+	
+	// what am I going to put in session
+	gob.Register(models.Reservation{})
 
 	// FIXME: set to "true" in prod.
 	app.InProduction = false
