@@ -8,9 +8,9 @@ import (
 
 	"github.com/alexedwards/scs/v2"
 
-	"github.com/IM-Deane/bookings/pkg/config"
-	"github.com/IM-Deane/bookings/pkg/handlers"
-	"github.com/IM-Deane/bookings/pkg/render"
+	"github.com/IM-Deane/bookings/internal/config"
+	"github.com/IM-Deane/bookings/internal/handlers"
+	"github.com/IM-Deane/bookings/internal/render"
 )
 
 

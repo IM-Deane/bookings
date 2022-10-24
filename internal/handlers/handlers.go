@@ -6,9 +6,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/IM-Deane/bookings/pkg/config"
-	"github.com/IM-Deane/bookings/pkg/models"
-	"github.com/IM-Deane/bookings/pkg/render"
+	"github.com/IM-Deane/bookings/internal/config"
+	"github.com/IM-Deane/bookings/internal/models"
+	"github.com/IM-Deane/bookings/internal/render"
 )
 
 // Repo is the repository used by the handlers

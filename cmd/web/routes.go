@@ -6,8 +6,8 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 
-	"github.com/IM-Deane/bookings/pkg/config"
-	"github.com/IM-Deane/bookings/pkg/handlers"
+	"github.com/IM-Deane/bookings/internal/config"
+	"github.com/IM-Deane/bookings/internal/handlers"
 )
 
 
