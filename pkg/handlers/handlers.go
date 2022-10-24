@@ -1,7 +1,9 @@
 package handlers
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/IM-Deane/bookings/pkg/config"
@@ -86,6 +88,29 @@ func (m *Repository) PostAvailability(w http.ResponseWriter, r *http.Request) {
 	endDate := r.Form.Get("end-date")
 
 	w.Write([]byte(fmt.Sprintf("start date is %s and end date is %s", startDate, endDate)))
+}
+
+type jsonResponse struct {
+	OK bool `json:"ok"`
+	Message string `json:"message"`
+}
+
+// AvailabilityJSON handles request for availability and returns JSON response
+func (m *Repository) AvailabilityJSON(w http.ResponseWriter, r *http.Request) {
+	res := jsonResponse{
+		OK: true,
+		Message: "Avaliable!",
+	}
+
+	// create JSON with fields from struct
+	out, err := json.MarshalIndent(res, "", "     ")
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(string(out))
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(out)
 }
 
 // Contact displays the website's contact page
