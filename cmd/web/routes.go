@@ -35,6 +35,7 @@ func routes(app *config.AppConfig) http.Handler {
 
 
 	router.Get("/make-reservation", handlers.Repo.Reservation)
+	router.Post("/make-reservation", handlers.Repo.PostReservation)
 
 	// init static file server
 	fileServer := http.FileServer(http.Dir("./static/"))

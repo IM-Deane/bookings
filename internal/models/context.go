@@ -1,5 +1,7 @@
 package models
 
+import "github.com/IM-Deane/bookings/internal/forms"
+
 // Context holds data passed from handlers to templates
 type Context struct {
 	StringMap map[string]string
@@ -10,4 +12,5 @@ type Context struct {
 	Flash string // success
 	Warning string
 	Error string
+	Form *forms.Form
 }
